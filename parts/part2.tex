@@ -1,0 +1,316 @@
+% !TEX root = SFV-15014_HuV.tex
+\section{Marketing}
+\sectionpage
+
+\subsection{Marktsegmentierung}
+\subsectionpage
+
+\frame{\frametitle{Warum Marktsegmentierung?}
+\framesubtitle{Any customer can have a car painted any colour that he wants so long as it is black. - Henry Ford}
+\begin{itemize}
+\item Marktidentifizierung
+\begin{itemize}
+		\item Abgrenzung des relevanten Gesamtmarktes
+		\item Bestimmung der relevanten Teilmärkte
+		\item Auffinden vernachlässigter Teilmärkte (Marktlücken, Marktnischen)
+\end{itemize}
+\item Rechtzeitige Beurteilung von Neueinführungen der Konkurrenz und rechtzeitiges Ergreifen von Gegenmaßnahmen
+\item Beurteilung der eigenen Markenpositionierung im Vergleich zur Positionierung der Konkurrenzprodukte
+\item Richtige Positionierung von Neuprodukten
+\item Fundierte Prognose der (segmentspezifischen) Marktentwicklung
+\item Optimale Allokation des Budgets auf einzelne Segmente
+\item Erhöhung der Zielerreichungsgrade 
+\item Preisfindung
+\end{itemize}
+}
+
+\offslide{Segmentierungskriterien f\"ur Schienenfahrzeuge und ihre Komponenten}
+
+\subsection{Marktgrundlagen}
+\subsectionpage
+
+\frame{\frametitle{Gr\"o{\ss}e und Entwicklung des Marktes}
+\framesubtitle{}
+\begin{columns}[t] 
+     \begin{column}[T]{4cm} 
+     	\begin{itemize}
+     		\item Gesamtmarkt Schienenfahrzeuge weltweit: 47 Mrd EUR (Stand 2012)
+		\item Dominierende Teilm\"arkte:
+		\begin{itemize}
+		\item Asien
+		\item Europa
+		\end{itemize}
+		\item Relevante Fahrzeugsegmente variieren lokal stark
+     	\end{itemize}
+     \end{column}
+     	\begin{column}[T]{8cm} 
+         	\begin{center}
+		\begin{tikzpicture}%[scale = 0.9]
+		\begin{axis}[ybar stacked,
+		ylabel={bn EUR/a},
+		legend style={at={(0.5,-0.4)},
+		anchor=north, legend columns=3},
+		symbolic x coords={EMEA, ASEAN, CIS, E. Europe, NAFTA, RoA, W. Europe},
+		xtick=data,
+		x tick label style={rotate=45,anchor=east},
+		title={Conventional Rail Market Size}]]
+		\addplot[fill = RYB1, draw = RYB1!50!black] coordinates
+			{(EMEA,0.220) (ASEAN,1.367) (CIS, 1.219) (E. Europe, .248) (NAFTA, .192) (RoA, .037) (W. Europe, .421)};
+		\addplot[fill = RYB2, draw = RYB2!50!black] coordinates
+		{(EMEA,.294) (ASEAN,.823) (CIS, .196) (E. Europe, .103) (NAFTA, .992) (RoA, .218) (W. Europe, .244)};
+		\addplot[fill = RYB3, draw = RYB3!50!black] coordinates
+		{(EMEA,.012) (ASEAN, .067) (CIS, .212) (E. Europe, .026) (NAFTA, .027) (RoA, .005) (W. Europe, .128)};
+		\addplot[fill = RYB4, draw = RYB4!50!black] coordinates
+		{(EMEA,.172) (ASEAN,.330) (CIS, .686) (E. Europe, .196) (NAFTA, .383) (RoA, .209) (W. Europe, .501)};
+		\addplot[fill = RYB5, draw = RYB5!50!black] coordinates
+		{(EMEA,.129) (ASEAN, .932) (CIS, 2.671) (E. Europe, .281) (NAFTA, 1.337) (RoA, .125) (W. Europe, .582)};
+		\legend{E-Locos, D-Locos, Shunters, Coaches, Wagons};
+		\end{axis}
+		\end{tikzpicture}
+        		\end{center}
+     \end{column}
+ \end{columns}
+}
+
+\frame{\frametitle{Gr\"o{\ss}e und Entwicklung des Marktes}
+\framesubtitle{}
+\begin{columns}[t] 
+     \begin{column}[T]{6cm} 
+     	\begin{center}
+		\begin{tikzpicture}[scale = 0.9]
+		\begin{axis}[ybar stacked, 
+		colormap/bluered,
+		ylabel={bn EUR/a},
+		legend style={at={(0.5,-0.4)},
+		anchor=north, legend columns=2},
+		symbolic x coords={EMEA, ASEAN, CIS, E. Europe, NAFTA, RoA, W. Europe},
+		xtick=data,
+		x tick label style={rotate=45,anchor=east},
+		title={Multiple Unit Market Size}]]
+		\addplot[fill = RYB2, draw = RYB2!50!black] coordinates
+		{(EMEA,0) (ASEAN,0.049) (CIS, 0) (E. Europe, 0) (NAFTA, 0) (RoA, 0) (W. Europe, 1.006)};
+		\addplot[fill = RYB3, draw = RYB3!50!black] coordinates
+		{(EMEA,0) (ASEAN, 1.638) (CIS, .893) (E. Europe, .668) (NAFTA, .283) (RoA, .463) (W. Europe, 3.342)};
+		\addplot[fill = RYB5, draw = RYB5!50!black] coordinates
+		{(EMEA,0) (ASEAN,0) (CIS, 0) (E. Europe, 0) (NAFTA, 0) (RoA, 0) (W. Europe, 0)};
+		\legend{IC EMU, Regional EMU, IC DMU, Regional DMU};
+		\addplot[fill = RYB4, draw = RYB4!50!black] coordinates
+		{(EMEA,.033) (ASEAN,.512) (CIS, .024) (E. Europe, .145) (NAFTA, .054) (RoA, .004) (W. Europe, .556)};
+		\end{axis}
+		\end{tikzpicture}
+        		\end{center}
+     \end{column}
+     	\begin{column}[T]{6cm} 
+         	\begin{center}
+		\begin{tikzpicture}[scale = 0.9]
+		\begin{axis}[ybar stacked, 
+		colormap/bluered,
+		ylabel={m EUR/a},
+		legend style={at={(0.5,-0.40)},
+		anchor=north, legend columns=3},
+		symbolic x coords={EMEA, ASEAN, CIS, E. Europe, NAFTA, RoA, W. Europe},
+		xtick=data,
+		x tick label style={rotate=45,anchor=east},
+		title={Urban Vehicle Market Size}]]
+		\addplot[fill = RYB1, draw = RYB1!50!black] coordinates
+			{(EMEA,.054) (ASEAN,.152) (CIS, .082) (E. Europe, .392) (NAFTA, .563) (RoA, .043) (W. Europe, 1.309)};
+		\addplot[fill = RYB2, draw = RYB2!50!black] coordinates
+		{(EMEA,.257) (ASEAN,1.638) (CIS, .052) (E. Europe, .215) (NAFTA, 1.131) (RoA, .607) (W. Europe, .661)};
+		\addplot[fill = RYB3, draw = RYB3!50!black] coordinates
+		{(EMEA,.142) (ASEAN, .094) (CIS, 0) (E. Europe, 0) (NAFTA, .085) (RoA, .151) (W. Europe, .104)};
+		\legend{LRV, Metro, APM};
+		\end{axis}
+		\end{tikzpicture}
+        		\end{center}
+     \end{column}
+ \end{columns}
+}
+
+\frame{\frametitle{Gesamtmarkt Schienenfahrzeuge}
+\framesubtitle{}
+\begin{center}
+\pgfplotsset{width=8.6cm}
+		\begin{tikzpicture}[scale = 0.95]
+		\begin{axis}[ybar stacked,
+		ylabel={bn EUR/a},
+		legend style={at={(1.5,1)}},
+		%anchor=north, legend columns=3},
+		symbolic x coords={EMEA, ASEAN, CIS, E. Europe, NAFTA, RoA, W. Europe},
+		xtick=data,
+		x tick label style={rotate=45,anchor=east},
+		title={Rail Vehicle Market Size}]]
+		\addplot[fill = RYB11, draw = RYB11!50!black] coordinates
+			{(EMEA,0.220) (ASEAN,1.367) (CIS, 1.219) (E. Europe, .248) (NAFTA, .192) (RoA, .037) (W. Europe, .421)};
+		\addplot[fill = RYB12, draw = RYB12!50!black] coordinates
+		{(EMEA,.294) (ASEAN,.823) (CIS, .196) (E. Europe, .103) (NAFTA, .992) (RoA, .218) (W. Europe, .244)};
+		\addplot[fill = RYB13, draw = RYB13!50!black] coordinates
+		{(EMEA,.012) (ASEAN, .067) (CIS, .212) (E. Europe, .026) (NAFTA, .027) (RoA, .005) (W. Europe, .128)};
+		\addplot[fill = RYB14, draw = RYB14!50!black] coordinates
+		{(EMEA,.172) (ASEAN,.330) (CIS, .686) (E. Europe, .196) (NAFTA, .383) (RoA, .209) (W. Europe, .501)};
+		\addplot[fill = RYB15, draw = RYB15!50!black] coordinates
+		{(EMEA,.129) (ASEAN, .932) (CIS, 2.671) (E. Europe, .281) (NAFTA, 1.337) (RoA, .125) (W. Europe, .582)};
+		\addplot[fill = RYB16, draw = RYB16!50!black] coordinates
+		{(EMEA,0) (ASEAN,0.049) (CIS, 0) (E. Europe, 0) (NAFTA, 0) (RoA, 0) (W. Europe, 1.006)};
+		\addplot[fill = RYB17, draw = RYB17!50!black] coordinates
+		{(EMEA,0) (ASEAN, 1.638) (CIS, .893) (E. Europe, .668) (NAFTA, .283) (RoA, .463) (W. Europe, 3.342)};
+		\addplot[fill = RYB18, draw = RYB18!50!black] coordinates
+		{(EMEA,0) (ASEAN,0) (CIS, 0) (E. Europe, 0) (NAFTA, 0) (RoA, 0) (W. Europe, 0)};
+		\addplot[fill = RYB19, draw = RYB19!50!black] coordinates
+		{(EMEA,.033) (ASEAN,.512) (CIS, .024) (E. Europe, .145) (NAFTA, .054) (RoA, .004) (W. Europe, .556)};
+		\addplot[fill = RYB20, draw = RYB20!50!black] coordinates
+			{(EMEA,.054) (ASEAN,.152) (CIS, .082) (E. Europe, .392) (NAFTA, .563) (RoA, .043) (W. Europe, 1.309)};
+		\addplot[fill = RYB21, draw = RYB21!50!black] coordinates
+		{(EMEA,.257) (ASEAN,1.638) (CIS, .052) (E. Europe, .215) (NAFTA, 1.131) (RoA, .607) (W. Europe, .661)};
+		\addplot[fill = RYB22, draw = RYB22!50!black] coordinates
+		{(EMEA,.142) (ASEAN, .094) (CIS, 0) (E. Europe, 0) (NAFTA, .085) (RoA, .151) (W. Europe, .104)};
+		\legend{E-Locos, D-Locos, Shunters, Coaches, Wagons, IC EMU, Regional EMU, IC DMU, Regional DMU, LRV, Metro, APM};
+		\end{axis}
+		\end{tikzpicture}
+        		\end{center}
+
+}
+
+
+
+\frame{\frametitle{Vertrieb und Beschaffung}
+\framesubtitle{}
+\begin{columns}[t] 
+     \begin{column}[T]{5cm} 
+     	\begin{itemize}
+     		\item Typisch: B-to-B-Markt
+		\item Eigenschaften:
+		\begin{itemize}
+		\item Investition statt Konsum
+		\item Abgeleitete Nachfrage
+		\item Multipersonalit\"at
+		\item Formalisierte Beschaffung
+		\item Individualisierung
+		\item Internationalit\"at
+		\end{itemize}
+     	\end{itemize}
+     \end{column}
+     	\begin{column}[T]{7cm} 
+         	\begin{center}
+            		\includegraphics[width=\textwidth]{Oligopol}
+        		\end{center}
+     \end{column}
+ \end{columns}
+}
+
+\frame{\frametitle{Bechaffungsmanagement}
+\framesubtitle{}
+%\begin{columns}[t] 
+    % \begin{column}[T]{8cm} 
+     	\begin{itemize}
+     		\item Ziele:
+		\begin{itemize}
+		\item Kosten 
+		\item Qualit\"at
+		\item Risiko
+		\item Flexibilit\"at 		
+		\end{itemize}
+		\item Strategien:
+		\begin{itemize}
+		\item Mutiple Sourcing
+		\begin{itemize}
+		\item[+] Wettbewerb, Risiken minimieren
+		\item[-] Aufwand z.B. bei Qualit\"atsunterschienden 
+		\end{itemize}
+		\item Single Sourcing
+		\begin{itemize}
+		\item[+] enge Zusammenarbeit, Entwicklung
+		\item[-] Wettbewerb eingeschr\"ankt 
+		\end{itemize}
+		\item Dual Sourcing
+		\begin{itemize}
+		\item[+/-] Vereint Vor- und Nachteile
+		\end{itemize}
+		\end{itemize}
+     	\end{itemize}
+     }
+     
+\frame{\frametitle{Konzepte der Beschaffung}
+\framesubtitle{}
+\begin{itemize}
+\item Komplexit\"at und Umfang
+	\begin{itemize}
+	\item System / Module Sourcing
+	\item Component Sourcing
+	\item Parts Sourcing
+	\end{itemize}
+\item Ort der Beschaffung
+	\begin{itemize}
+	\item Lokal oder global
+	\item Intern oder extern (Make or Buy)
+	\end{itemize}
+\item Bereitstellung
+	\begin{itemize}
+	\item Stock Sourcing
+	\item Demand Tailored Sourcing
+	\item Just-In-Time-Sourcing
+	\end{itemize}
+\end{itemize}
+}
+
+\frame{\frametitle{Marktschranken}
+\framesubtitle{In der Bahnindustrie sind im Vergleich zu anderen Branchen die Marktschranken hoch.}
+     	\begin{itemize}
+     		\item Markteintrittsschranke: erschwert den Eintritt neuer Marktteilnehmer
+		\item In Bahnm\"arkten h\"aufig:
+		\begin{itemize}
+		\item Regulatorische Schranken
+		\item Normative Schranken
+		\item K\"auferpr\"aferenzen
+		\end{itemize}
+		\item Marktaustrittsschranke: erschwert den Austritt der Marktteilnehmer
+		\item Typisch f\"ur M\"arkte mit hohen Schranken: Hohe Margen, Oligopole
+     	\end{itemize}
+    }
+    
+\offslide{Sammlung Marktschranken}
+
+\frame{\frametitle{Marktrisiken}
+\framesubtitle{}
+\begin{columns}[t] 
+     \begin{column}[T]{6cm} 
+     	\begin{itemize}
+     		\item Marktspezifische Risiken:
+		\begin{itemize}
+		\item Implizite Anforderungen
+		\item Marktverdr\"angung durch Wettbewerber
+		\end{itemize} 
+     	\end{itemize}
+     \end{column}
+     	\begin{column}[T]{6cm} 
+         	\begin{center}
+            		%\includegraphics[width=0.8\textwidth]{}
+        		\end{center}
+     \end{column}
+ \end{columns}
+}
+
+%\offslide{Sammlung von Marktrisiken}
+%
+%\frame{\frametitle{Diversifikation: Analyse mittels Ansoff-Matrix}
+%\framesubtitle{}
+%\begin{columns}[t] 
+%     \begin{column}[T]{6cm} 
+%     	\begin{itemize}
+%     		\item Strategische Marktziele
+%		\begin{itemize}
+%		\item z.B. Markteintritt in Australien
+%		\end{itemize}
+%		\item ben\"otigen Produkte
+%		\begin{itemize}
+%		\item z.B. Kupplung AAR Type H
+%		\end{itemize}
+%		\item Sowohl der Markteintritt als auch das neue Produkt bergen Risiken!
+%     	\end{itemize}
+%     \end{column}
+%     	\begin{column}[T]{6cm} 
+%         	\begin{center}
+%            		\includegraphics[width=\textwidth]{Ansoff}
+%        		\end{center}
+%     \end{column}
+% \end{columns}
+%}

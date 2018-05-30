@@ -1,0 +1,283 @@
+% !TEX root = SFV-15014_HuV.tex
+\section{Projektplanung}
+\sectionpage
+
+\frame{\frametitle{Was bedeutet Projektplanung?}
+\framesubtitle{\textit{[...] I have always found that plans are useless but planning is indispensable.}  \\ \hspace{9cm} {Dwight D. Eisenhower}}
+\begin{columns}[t] 
+     \begin{column}[T]{6cm} 
+     	\begin{itemize}
+     		\item Organisation verschiedener Projektaspekte:
+		\begin{itemize}
+		\item Projektumfang
+		\item Arbeitspakete
+		\item Projektrisiken
+		\item Finanz- und Kostenplanung
+		\item Einsatzmittelplanung
+		\item Materialplanung
+		\item Berichten des Fortschritts
+		\item Verfolgen von Abweichungen
+		\end{itemize}
+		\item Begleitung der Projektdurchf\"uhrung
+		\begin{itemize}
+		\item Ggf. Plananpassung, Krisenmanagement
+		\end{itemize}
+     	\end{itemize}
+     \end{column}
+     	\begin{column}[T]{6cm} 
+         	\begin{center}
+            		\includegraphics[width=0.9\textwidth]{NasaPP}\\
+		\tiny {\color{gray} NASA Project Planning Process}
+        		\end{center}
+     \end{column}
+ \end{columns}
+}
+
+\frame{\frametitle{Projekt: Mars Voyage}
+\framesubtitle{Zur Veranschaulichung der Projektplanungsmethodiken dient das recht engagierte Ziel, innerhalb von 10 Monaten Astronauten zum Mars zu senden.}
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+Step & Description & Estimated Effort & Predecessor\\ \hline
+0 & Kick Off & Milestone & -\\ \hline
+A & Build spaceship & 2 & 0\\ \hline
+B & Equip spaceship & 1 & A\\ \hline
+C & Test spaceship & 2 & B\\ \hline
+D & Train astronauts & 4 & 0\\ \hline
+E & Flight to Mars & 5 & C, D\\ \hline
+1 & Mars Landing & Milestone & E\\ \hline
+\end{tabular}
+\end{center}
+}
+
+%\frame{\frametitle{M\"ogliche Sequenzen von Arbeitspaketen}
+%\framesubtitle{}
+%\begin{itemize}
+%\item Abh\"angig
+%\item Unabh\"angig
+%\item Ineinandergreifend
+%\end{itemize}
+%}
+
+
+\frame{\frametitle{Kritischer Pfad}
+\framesubtitle{Der kritische Pfad zeigt unter parallelen Aktivit\"aten die (derzeit) terminbestimmende Kombination an.}
+     	\begin{itemize}
+     		\item Voraussetzungen:
+		\begin{itemize}
+		\item Liste der Arbeitspakete (z.B. aus WBS)
+		\item Dauer der Aufgaben
+		\item Abh\"angigkeiten
+		\item Zwischen-/Endpunkte, z.B. Meilensteine, Deliverables
+		\end{itemize}
+     	\end{itemize}
+             	\begin{center}
+		\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2cm,
+  thick,main node/.style={circle,fill=blue!20,draw,font=\sffamily\Large\bfseries}]
+
+  \node[main node, fill = gray] (0) {0};
+  \node[main node] (A) [below right of=0] {A:2};
+  \node[main node] (B) [right of=A] {B:1};
+  \node[main node] (C) [right of=B] {C:2};
+  \node[main node] (D) [above of=B] {D:4};
+  \node[main node] (E) [above right of=C] {E:5};
+  \node[main node, fill = gray] (1) [right of=E] {1};
+
+
+  \path[every node/.style={font=\sffamily\small}]
+    	(0) edge[draw = red!80!black] node {} (A)
+	(A) edge[draw = red!80!black] node {} (B)
+	(B) edge[draw = red!80!black] node {} (C)
+	(0) edge node {} (D)
+	(C) edge[draw = red!80!black] node {} (E)
+	(D) edge node {} (E)
+	(E) edge[draw = red!80!black] node {} (1);
+	%(0) edge [bend left] node[above]{10} (1);
+\end{tikzpicture}
+	        		\end{center}
+  }
+
+\frame{\frametitle{Gantt-Diagramme}
+\framesubtitle{}
+\begin{columns}[t] 
+     \begin{column}[T]{6cm} 
+     	\begin{itemize}
+     		\item Tabellenform:
+		\begin{itemize}
+		\item Erste Zeile: Zeitachse
+		\item Erste Spalte: Aktivit\"aten
+		\item Aktivit\"aten als Balken
+		\end{itemize}
+		\item Weitere Elemente:
+		\begin{itemize}
+		\item Gruppen
+		\item Meilensteine
+		\item Abh\"angigkeiten
+		\end{itemize}
+		\item Un\"ubersichtlich f\"ur gro{\ss}e Projekte
+		\item Toolunterst\"utzung:
+		\begin{itemize}
+		\item MS Project
+		\item Project Libre
+		\end{itemize}
+     	\end{itemize}
+     \end{column}
+     	\begin{column}[T]{6cm} 
+         	\begin{center}
+            		\begin{ganttchart}[vgrid, hgrid, 
+		%today = 4, 
+		progress=today,
+		progress label text=\relax,
+		today=3,
+		y unit chart = 5 mm,
+		x unit = 4 mm,
+		bar/.append style={fill=blue!80!black},
+		%chart element start border=right
+		]{1}{12}
+			%\gantttitle{Mars voyage}{12} \\
+			\gantttitlelist{1,...,12}{1}\\
+			\ganttgroup{}{2}{11} \\
+			\ganttmilestone{0}{1}\\
+			\ganttbar{A}{2}{3} \\
+			\ganttbar{B}{4}{4} \\
+			\ganttbar{C}{5}{6} \\
+			\ganttbar[progress = 90]{D}{2}{5} \\
+			\ganttbar{E}{7}{11} \\
+			\ganttmilestone{1}{11}
+			\ganttlink{elem1}{elem2}
+			\ganttlink{elem1}{elem5}
+			\ganttlink{elem2}{elem3}
+			\ganttlink{elem3}{elem4}
+			\ganttlink{elem4}{elem6}
+			\ganttlink{elem4}{elem6}
+			\ganttlink{elem5}{elem6}
+			\end{ganttchart}
+
+        		\end{center}
+     \end{column}
+ \end{columns}
+}
+
+\frame{\frametitle{Projektplanung im Gantt-Diagram}
+\framesubtitle{}
+         	\begin{center}
+            		\begin{ganttchart}[vgrid, hgrid, 
+		%today = 4, 
+		progress=today,
+		progress label text=\relax,
+		today=3,
+		y unit chart = 7 mm,
+		bar/.append style={fill=blue!80!black},
+		%chart element start border=right
+		]{1}{12}
+			%\gantttitle{Mars voyage}{12} \\
+			\gantttitlelist{1,...,12}{1}\\
+			\ganttgroup{Get there}{2}{11} \\
+			\ganttmilestone{0: Kick Off}{1}\\
+			\ganttbar{A: Build spaceship}{2}{3} \\
+			\ganttbar{B: Equip spaceship}{4}{4} \\
+			\ganttbar{C: Test spaceship}{5}{6} \\
+			\ganttbar[progress = 90]{D: Train astronauts}{2}{5} \\
+			\ganttbar{E: Flight to Mars}{7}{11} \\
+			\ganttmilestone{1: Mars landing}{11}
+			\ganttlink{elem1}{elem2}
+			\ganttlink{elem1}{elem5}
+			\ganttlink{elem2}{elem3}
+			\ganttlink{elem3}{elem4}
+			\ganttlink{elem4}{elem6}
+			\ganttlink{elem4}{elem6}
+			\ganttlink{elem5}{elem6}
+			\end{ganttchart}
+        		\end{center}
+}
+
+%\frame{\frametitle{Netzplanmethode}
+%\framesubtitle{}
+%\begin{columns}[t] 
+%     \begin{column}[T]{6cm} 
+%     	\begin{itemize}
+%     		\item Graph, Elemente:
+%		\begin{itemize}
+%		\item Knoten
+%		\item Kanten
+%		\end{itemize}
+%		\item Darstellungen u.a.:
+%		\begin{itemize}
+%		\item Vorgangsknoten-Netzplan
+%		\item Vorgangspfeil-Netzplan
+%		\end{itemize}
+%     	\end{itemize}
+%     \end{column}
+%     	\begin{column}[T]{6cm} 
+%         	\begin{itemize}
+%		\item Daten eines Vorgangs:
+%		\begin{itemize}
+%		\item Aus Vorw\"artsplanung:
+%		\begin{itemize}
+%		\item Fr\"uhester Anfangs-, Endzeitpunkt
+%		\end{itemize}
+%		\item Aus R\"uckw\"artsplanung:
+%		\begin{itemize}
+%		\item Sp\"atester Anfangs-, Endzeitpunkt
+%		\end{itemize}
+%		\item Dauer
+%		\item Pufferzeiten
+%		\end{itemize}
+%		\end{itemize}
+%     \end{column}
+% \end{columns}
+%\begin{center}
+%            		\includegraphics[width=0.7\textwidth]{Netzplan}
+%			\rotatebox{90}{\tiny \color{gray} Quelle: Wikipedia/Skaler}
+%        		\end{center}
+%}
+%
+%\frame{\frametitle{Design Structure Matrix}
+%\framesubtitle{}
+%\begin{columns}[t] 
+%     \begin{column}[T]{6cm} 
+%     	\begin{itemize}
+%     		\item Modellierung des Informationsflusses
+%		\item Erleichtert:
+%		\begin{itemize}
+%		\item Finden von (sequentiellen) Aufgaben-Clustern
+%		\item Entdecken von Interationen
+%		\end{itemize}
+%		\item Eintr\"age:
+%		\begin{itemize}
+%		\item Hauptdiagonale: Dauer
+%		\item Unterhalb: Sequentielle Arbeitspakete
+%		\item Oberhalb: Iterationen
+%		\end{itemize}
+%		\item Cluster:
+%		\begin{itemize}
+%		\item Bilden eine Submatrix
+%		\item K\"onnen zusammengefasst werden
+%		\end{itemize}
+%     	\end{itemize}
+%     \end{column}
+%     	\begin{column}[T]{6cm} 
+%         	\begin{center}
+%            		\only<1-2>{\begin{tabular}{c|c|c|c|c|c|c|c|}
+%                            & 0 & A & B & C & D & E & 1\\ \hline
+%                            0 & 0 &  &  &  &  &  & \\ \hline
+%                            A &  X &\only<2>{\cellcolor{red!25} \color{red!80!black}} 2 & \only<2>{\cellcolor{red!25}} & \only<2>{\cellcolor{red!25}} &  &  & \\ \hline
+%                            B &  & \only<2>{\cellcolor{red!25} \color{red!80!black}}X & \only<2>{\cellcolor{red!25}\color{red!80!black}}1 & \only<2>{\cellcolor{red!25}} &  &  & \\ \hline
+%                            C &  &  \only<2>{\cellcolor{red!25}} & \only<2>{ \cellcolor{red!25}\color{red!80!black}}X & \only<2>{\cellcolor{red!25}\color{red!80!black}}2 &  &  & \\ \hline
+%                            D & X &  &  &  &\only<2>{\cellcolor{blue!25} \color{blue!80!black}} 4 &  & \\ \hline
+%                            E &  &  &  & X & X & 5 & \\ \hline
+%                            1 &  &  &  &  & X & X & 0\\ 
+%                            \end{tabular}}
+%                            \only<3>{\begin{tabular}{c|c|c|c|c|c|}
+%                            & 0 & ABC & D & E & 1\\ \hline
+%                            0 & 0 &  &  &  & \\ \hline
+%                            ABC &  X &\cellcolor{red!25} \color{red!80!black} 5 &  &  & \\ \hline
+%                            D & X  &  &\cellcolor{blue!25} \color{blue!80!black} 4 &  & \\ \hline
+%                            E &  & X & X & 5 & \\ \hline
+%                            1 &  &  & X & X & 0\\ 
+%                            \end{tabular}
+%                            }
+%        		\end{center}
+%     \end{column}
+% \end{columns}
+%}

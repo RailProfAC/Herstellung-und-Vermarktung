@@ -1,0 +1,149 @@
+\documentclass[slidestop,compress,mathserif, aspectratio = 1610]{beamer}
+\usecolortheme{seagull} % Beamer color theme
+\useinnertheme{rectangles}
+\usepackage[round]{natbib}
+\usepackage{bibentry}
+\usepackage{graphicx}
+\usepackage{epigraph}
+\usepackage{makeidx}
+\usepackage[]{amsmath}
+\usepackage[]{amssymb}
+\usepackage{color}
+\usepackage{pict2e}
+\usepackage{algorithm2e}
+\usepackage[ngerman]{babel}
+\usepackage{tikz}
+\usetikzlibrary{mindmap}
+\usepackage{multirow}
+\usepackage[utf8]{inputenc}
+\usepackage{multimedia}
+\usepackage{xcolor}
+\usepackage{keyval}
+\usepgfmodule{shapes}
+\usepackage{pgfplots}
+\usepackage{sansmath}
+\usepackage{pgfgantt}
+\usetikzlibrary{arrows}
+\usepackage{colortbl}
+\usepackage{array}
+
+
+\definecolor{mint}{rgb}{0,177,172}
+\graphicspath{{../../figures/}}
+
+\newcommand{\source}[1]{\rotatebox{90}{\tiny \color{gray} #1}}
+
+
+\mode<handout>{
+\usepackage{pgfpages}
+\pgfpagesuselayout{2 on 1}[a4paper,border shrink=5mm]
+}
+
+%\AtBeginSection{\frame{\sectionpage}}
+\newtranslation[to=ngerman]{Section}{Teil}
+\newtranslation[to=ngerman]{Subsection}{Abschnitt}
+
+\pgfplotsset{width=6cm, 
+	tick label style = {font=\sansmath\sffamily},
+  every axis label = {font=\sansmath\sffamily},
+  legend style = {font=\sansmath\sffamily},
+  label style = {font=\sansmath\sffamily}}
+\definecolor{RYB1}{RGB}{240,249,232}
+\definecolor{RYB2}{RGB}{186,228,188}
+\definecolor{RYB3}{RGB}{123,204,196}
+\definecolor{RYB4}{RGB}{67,162,202}
+\definecolor{RYB5}{RGB}{18,104,172}
+
+\definecolor{RYB11}{RGB}{141,211,199}
+\definecolor{RYB12}{RGB}{255,255,179}
+\definecolor{RYB13}{RGB}{190,186,218}
+\definecolor{RYB14}{RGB}{251,128,114}
+\definecolor{RYB15}{RGB}{128,177,211}
+\definecolor{RYB16}{RGB}{253,180,98}
+\definecolor{RYB17}{RGB}{179,222,105}
+\definecolor{RYB18}{RGB}{252,205,229}
+\definecolor{RYB19}{RGB}{217,217,217}
+\definecolor{RYB20}{RGB}{188,128,189}
+\definecolor{RYB21}{RGB}{204,235,197}
+\definecolor{RYB22}{RGB}{255,237,111}
+
+
+
+%%\pgfplotsset{
+%    select row/.style={
+%        x filter/.code={\ifnum\coordindex=#1\else\def\pgfmathresult{}\fi}
+%    }
+%}
+
+\begin{document}
+
+\tikzstyle{element} = [draw,rectangle, align = center, text width = 2.5 cm, node distance = 1.25 cm]
+
+
+%% Formalia
+\newcommand{\revision}{Rev. B}
+\newcommand{\docnum}{SFV-15014}
+\newcommand{\offslide}[2]{\frame{\frametitle{\includegraphics[scale=0.01]{Off} \hspace{.1cm} #1}
+%\newcommand{\tikzmark}[1]{\tikz[overlay,remember picture] \node (#1) {};}
+\framesubtitle{#2}
+\begin{center} \end{center}}}
+
+\title[86512 HuV]{86512 Herstellung und Vermarktung von Schienenfahrzeugen}
+\subtitle{}
+\author[R. Pfaff]{Prof. Dr. Raphael Pfaff}
+\institute[Dokument \docnum, \revision]{Fachhochschule Aachen}
+\logo{\put(-18, 200){\includegraphics[width=1.4cm]{logoR}}}
+
+% Pr\"aliminarien
+\include{parts/part1}
+
+% Marketing
+\include{parts/part2}
+
+%Projektmanagement
+\include{parts/part3}
+
+%Projektdokumentation, Vertragspr\"ufung
+\include{parts/part4}
+
+%Requirements Engineering
+\include{parts/part5}
+
+%Aufwandssch\"atzung
+\include{parts/part6}
+
+%Projektplanung
+\include{parts/part7}
+
+% Grundlagen Lean Manufacturing
+%\include{parts/part8}
+
+%Rohbau
+%\include{parts/part9}
+
+%Schweissen nach EN 15085
+\include{parts/part10}
+
+%Schrauben
+\include{parts/part11}
+
+%Materialien und Korrosionsschutz, DB G\"utepr\"ufung
+\include{parts/part12}
+
+
+%% IBS und Abhname:
+\include{parts/part13}
+
+
+\frame[allowframebreaks]{\frametitle{Literatur}
+\framesubtitle{}
+\nocite{kleinaltenkamp}
+\nocite{kanitzky}
+\nocite{felkai}
+\nocite{en150853, en150854, en150855, din252011, din252012, din252014, dvs1612}
+\bibliographystyle{plainnat}
+\bibliography{../../../bib}
+}
+
+
+\end{document}
