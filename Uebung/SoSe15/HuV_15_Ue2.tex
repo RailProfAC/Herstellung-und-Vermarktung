@@ -1,0 +1,177 @@
+\documentclass[10pt,a4paper,headsepline,smallheadings]{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage[scaled]{helvet}
+\usepackage{amssymb}
+\usepackage{multirow}
+\usepackage{textcomp}
+\usepackage{graphicx}
+\usepackage{paralist}
+\usepackage{textcomp}
+\usepackage{pdflscape} 
+\usepackage{marvosym}
+\usepackage{float}
+\usepackage{siunitx}
+\usepackage[siunitx,european,cuteinductors,smartlabels]{circuitikz}
+\usepackage{fancyhdr}
+\usepackage{pgfplots}
+\usepackage{sansmath}
+\usepackage{lscape}
+\usepackage{multicol}
+
+\usetikzlibrary{calc}
+
+
+\theoremstyle{definition}
+\newtheorem{aufgabe}{Aufgabe}
+
+
+\renewcommand*\familydefault{\sfdefault}
+\renewcommand{\arraystretch}{1.1}
+
+
+\KOMAoptions{parskip=half,DIV=15,fontsize=11pt}
+\unitlength1cm
+\titlehead{
+
+\begin{center}\begin{tabular}{p{10cm}p{6.8cm}}
+\textbf{FH Aachen} & \textbf{FB Maschinenbau und Mechatronik}\\[0.5cm]
+\textbf{Modul 86512} &  Prof. Dr. Raphael Pfaff\\
+Herstellung und Vermarktung& Sommersemester 2015\\
+\end{tabular}
+
+\end{center}
+\begin{picture}(0,0)(0,0)\put(17,-23){\includegraphics[height=5cm]{fh_logo}}\end{picture}
+}
+\newif\ifuelsg %als slides
+%\uelsgtrue
+\uelsgfalse
+\newif\ifnotuelsg
+\ifuelsg\notuelsgfalse\else\notuelsgtrue\fi
+\graphicspath{
+{../Bilder/Uebungen/}
+{../Bilder/Wirkungsplan/}
+}
+
+%\titlehead{83105 \hfill Mess-Steuerungs- und Regelungstechnik \hfill Prof. Manfred Enning}
+\title{Herstellung und Vermarktung von Schienenfahrzeugen  -- \"Ubung 2}
+\date{}
+\makeatletter
+\let\Title\@title
+\let\Author\@author
+\makeatother
+\pagestyle{fancy}
+\fancyhead[LE, LO]{Prof. Dr. Raphael Pfaff}
+\fancyhead[RE, RO]{\Title}
+
+\begin{document}
+\thispagestyle{empty}
+\maketitle
+\vspace{-2cm}
+% \hyphenation{Abwei-chungen}
+
+\section*{Schwei{\ss}nahtg\"uteklassen}
+
+\begin{aufgabe}[Sicherheitsbed\"urfnis. Gruppenarbeit 2-3] 
+Bewerten Sie die Sicherheitsbed\"urfnisse der Schwei{\ss}n\"ahte der unten in Seitenansicht und Draufsicht gezeigten Kupplung.
+
+\begin{enumerate}[a)]
+\item F\"ugen\"ahte Elektrokupplung (Pos. 006) (Kehlnaht a3)
+\item Heftn\"ahte Kegel an Kuppelkopf (Pos. 001) (4 x Kehlnaht a4)
+\item Verbindung Kuppelkopf-F\"uhrung Elektrokupplung (Pos. 001, 025) (Kehlnaht a4)
+\item Verbindung Karabiner-Anschraubplatte (an Pos. 001) (Kehlnaht a3)
+\item Fertigungsschwei{\ss}en an Schalenmuffe (Pos. 004)
+\item Verbindung Verformungsrohr zu Flansch (Pos. 003) (Steilflankennaht 23mm)
+\item F\"ugen\"ahte und Anschraubteile f\"ur HLL-Rohr (an Pos. 001) (Kehlnaht a3)
+\item Anlenkteller an Zugstangengeh\"ause (Pos. 002) (V-Naht 15 mm)
+\end{enumerate}
+
+\end{aufgabe}
+\vspace{.5cm}
+
+\begin{aufgabe}[Beanspruchungszustand. Gruppenarbeit 2-3] 
+Bewerten Sie die Beanspruchungszust\"ande der Schwei{\ss}n\"ahte der unten in Seitenansicht und Draufsicht gezeigten Kupplung. Bei welchen Schwei{\ss}n\"ahten w\"urden Sie auf eine Berechnung verzichten?
+
+\begin{enumerate}[a)]
+\item F\"ugen\"ahte Elektrokupplung (Pos. 006) (Kehlnaht a3)
+\item Heftn\"ahte Kegel an Kuppelkopf (Pos. 001) (4 x Kehlnaht a4)
+\item Verbindung Kuppelkopf-F\"uhrung Elektrokupplung (Pos. 001, 025) (Kehlnaht a4)
+\item Verbindung Karabiner-Anschraubplatte (an Pos. 001) (Kehlnaht a3)
+\item Fertigungsschwei{\ss}en an Schalenmuffe (Pos. 004)
+\item Verbindung Verformungsrohr zu Flansch (Pos. 003) (Steilflankennaht 23mm)
+\item F\"ugen\"ahte und Anschraubteile f\"ur HLL-Rohr (an Pos. 001) (Kehlnaht a3)
+\item Anlenkteller an Zugstangengeh\"ause (Pos. 002) (V-Naht 15 mm)
+\end{enumerate}
+
+\end{aufgabe}
+
+\begin{aufgabe}[Beanspruchungszustand. Gruppenarbeit 2-3] 
+Bewerten Sie die Beanspruchungszust\"ande der Schwei{\ss}n\"ahte der unten in Seitenansicht und Draufsicht gezeigten Kupplung. Bei welchen Schwei{\ss}n\"ahten w\"urden Sie auf eine Berechnung verzichten? Sch\"atzen Sie die wirkenden Kr\"afte ab.
+
+\begin{enumerate}[a)]
+\item F\"ugen\"ahte Elektrokupplung (Pos. 006) (Kehlnaht a3)
+\item Heftn\"ahte Kegel an Kuppelkopf (Pos. 001) (4 x Kehlnaht a4)
+\item Verbindung Kuppelkopf-F\"uhrung Elektrokupplung (Pos. 001, 025) (Kehlnaht a4)
+\item Verbindung Karabiner-Anschraubplatte (an Pos. 001) (Kehlnaht a3)
+\item Fertigungsschwei{\ss}en an Schalenmuffe (Pos. 004)
+\item Verbindung Verformungsrohr zu Flansch (Pos. 003) (Steilflankennaht 23mm)
+\item F\"ugen\"ahte und Anschraubteile f\"ur HLL-Rohr (an Pos. 001) (Kehlnaht a3)
+\item Anlenkteller an Zugstangengeh\"ause (Pos. 002) (V-Naht 15 mm)
+\end{enumerate}
+
+\end{aufgabe}
+\vspace{0.5cm}
+\begin{aufgabe}[Schwei{\ss}nahtg\"uteklassen und -pr\"ufklassen. Gruppenarbeit 2-3] 
+Nehmen Sie f\"ur alle Schwei{\ss}n\"ahte eine geringe Ausnutzung der Festigkeit an. Legen Sie die Schwei{\ss}nahtg\"uteklassen und -pr\"ufklassen fest. \"Uber welche Zertifizierung muss ein Zulieferer verf\"ugen, wenn er diese Teile fertigt?
+
+\begin{enumerate}[a)]
+\item F\"ugen\"ahte Elektrokupplung (Pos. 006) (Kehlnaht a3)
+\item Heftn\"ahte Kegel an Kuppelkopf (Pos. 001) (4 x Kehlnaht a4)
+\item Verbindung Kuppelkopf-F\"uhrung Elektrokupplung (Pos. 001, 025) (Kehlnaht a4)
+\item Verbindung Karabiner-Anschraubplatte (an Pos. 001) (Kehlnaht a3)
+\item Fertigungsschwei{\ss}en an Schalenmuffe (Pos. 004)
+\item Verbindung Verformungsrohr zu Flansch (Pos. 003) (Steilflankennaht 23mm)
+\item F\"ugen\"ahte und Anschraubteile f\"ur HLL-Rohr (an Pos. 001) (Kehlnaht a3)
+\item Anlenkteller an Zugstangengeh\"ause (Pos. 002) (V-Naht 15 mm)
+\end{enumerate}
+
+\end{aufgabe}
+\newpage
+\section*{Festigkeitsberechnung}
+\begin{aufgabe}[Festigkeitsberechnung] 
+Die dynamischen Druck- und Zuglasten auf die Kupplung betragen 200 kN. Bestimmen Sie die Auslastung gem\"a{\ss} DVS 1612 f\"ur folgende Schwei{\ss}n\"ahte:
+ \begin{enumerate}[a)]
+\item Verbindung Verformungsrohr zu Flansch (Pos. 003)
+\begin{itemize}
+		\item Steilflankennaht 23mm
+		\item 350 mm lang
+		\item Verbleibende Badsicherung
+		\item \"Ubertr\"agt nur Drucklasten
+\end{itemize}
+\item Anlenkteller an Zugstangengeh\"ause (Pos. 002)
+\begin{itemize}
+		\item V-Naht 15mm
+		\item durchgeschwei{\ss}t mit Gegenlage
+		\item Nahtwinkel 30$^\circ$
+		\item 400 mm lang
+		\item Verbleibende Badsicherung
+		\item \"Ubertr\"agt Zug- und Drucklasten
+\end{itemize}
+
+\end{enumerate}
+\end{aufgabe}
+
+
+\begin{landscape}
+\begin{center}
+\includegraphics[width = 1.3\textwidth]{DML1}
+\newpage
+\includegraphics[width = 1.3\textwidth]{DML2}
+\end{center}
+\end{landscape}
+\end{document}
