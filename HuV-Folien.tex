@@ -1,5 +1,7 @@
 \documentclass[slidestop,compress,mathserif, aspectratio = 1610]{beamer}
-\usecolortheme{seagull} % Beamer color theme
+%\usecolortheme{seagull} % Beamer color theme
+%\useinnertheme{rectangles}
+\usetheme{metropolis}
 \useinnertheme{rectangles}
 \usepackage[round]{natbib}
 \usepackage{bibentry}
@@ -83,16 +85,23 @@
 %% Formalia
 \newcommand{\revision}{Rev. B}
 \newcommand{\docnum}{SFV-15014}
-\newcommand{\offslide}[2]{\frame{\frametitle{\includegraphics[scale=0.01]{Off} \hspace{.1cm} #1}
-%\newcommand{\tikzmark}[1]{\tikz[overlay,remember picture] \node (#1) {};}
-\framesubtitle{#2}
-\begin{center} \end{center}}}
+\newcommand{\offslide}[2]{
+\begin{frame}
+\frametitle{\includegraphics[scale=0.05] {Offwhite} \hspace{.5mm} #1}
+%\framesubtitle{#2}
+\begin{tikzpicture}[x=1cm, y=1cm, semitransparent]
+\draw[step=5mm, line width=0.2mm, black!40!white] (0,0) grid (\textwidth,\textheight-1cm);
+\node[anchor = south east] at (\textwidth,0) {#2};
+
+\end{tikzpicture}
+\end{frame}
+}
 
 \title[86512 HuV]{86512 Herstellung und Vermarktung von Schienenfahrzeugen}
 \subtitle{}
 \author[R. Pfaff]{Prof. Dr. Raphael Pfaff}
 \institute[Dokument \docnum, \revision]{Fachhochschule Aachen}
-\logo{\put(-18, 200){\includegraphics[width=1.4cm]{logoR}}}
+\logo{\put(-18, 0){\includegraphics[width=1.4cm]{logoR}}}
 
 % Pr\"aliminarien
 \include{parts/part1}
@@ -116,10 +125,7 @@
 \include{parts/part7}
 
 % Grundlagen Lean Manufacturing
-%\include{parts/part8}
-
-%Rohbau
-%\include{parts/part9}
+\include{parts/part8}
 
 %Schweissen nach EN 15085
 \include{parts/part10}
@@ -144,6 +150,4 @@
 \bibliographystyle{plainnat}
 \bibliography{../../../bib}
 }
-
-
 \end{document}
